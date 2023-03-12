@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="script.js"></script>
+    <script src="date.js"></script>
+    <title>José Miguel</title>
+</head>
+
+<body>
+
+    <header>
+        <span class="material-icons">menu</span>
+        <h1>Rundra</h1>
+        <div>
+            <span class="material-icons">language</span>
+            <span class="material-icons">search</span>
+            <span class="material-icons">perm_identity</span>
+        </div>
+    </header>
+
+    <div class="seleccion">
+
+        <div id="destino">
+            <input type="text" value="Córdoba" id="destino"><span class="material-icons" id="buscador">search</span>
+        </div>
+        <div class="fechas">
+            <!-- <input type="date" name="fecha" id="fecha">
+            <input type="date" name="fecha1" id="fecha1"> -->
+            <input type="text" name="datefilter" value="Entrada-Salida" / id="fecha">
+            <input type="button" value="Añadir Huespedes" id="boton">
+            <input type="button" value="Buscar" id="buscar">
+        </div>
+
+    </div>
+
+    <div class="huespedes" id="añadir-huespedes" style="display: none">
+        <div class="adultos">
+            <p>Adultos</p>
+            <div>
+                <span class="material-icons" id="alineado">remove_circle_outline</span>
+                <span class="material-icons" id="alineado">exposure_zero</span>
+                <span class="material-icons" id="alineado">add_circle_outline</span>
+            </div>
+        </div>
+        <div class="niños">
+            <p>Niños</p>
+            <div>
+                <span class="material-icons" id="alineado">remove_circle_outline</span>
+                <span class="material-icons" id="alineado">exposure_zero</span>
+                <span class="material-icons" id="alineado">add_circle_outline</span>
+            </div>
+        </div>
+        <div class="mascotas">
+            <p>Mascotas</p>
+            <div>
+                <span class="material-icons" id="alineado">remove_circle_outline</span>
+                <span class="material-icons" id="alineado">exposure_zero</span>
+                <span class="material-icons" id="alineado">add_circle_outline</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="filtros" id="filtros">
+        <div class="mapa">Top Casitas</div>
+        <div class="filtrar" id="filtro">Filtrar</div>
+    </div>
+
+    <main>
+
+        <section>
+            <div id="filtrado" style="display: none">
+                <select>
+                    <option value="Filtros" disabled>Filtros </option>
+                    <option value="1">Disponibilidad</option>
+                    <option value="3">Valoración</option>
+                    <option value="3">Habitaciones</option>
+                    <option value="4">Precio Alto</option>
+                    <option value="5">Precio Bajo</option>
+                </select>
+                <ul>
+                    <li><input type="checkbox"> Wifi</li><span class="material-icons">contactless</span>
+                    <li><input type="checkbox"> Piscina</li><span class="material-icons">pool</span>
+                    <li><input type="checkbox"> Golf</li><span class="material-icons">golf_course</span>
+                    <li><input type="checkbox"> Trekking</li><span class="material-icons">hiking</span>
+                    <li><input type="checkbox"> SPA</li><span class="material-icons">spa</span>
+                    <li><input type="checkbox"> Gym</li><span class="material-icons">fitness_center</span>
+                    <li><input type="checkbox"> Surf</li><span class="material-icons">surfing</span>
+                    <li><input type="checkbox"> Fútbol</li><span class="material-icons">sports</span>
+                </ul>
+            </div>
+        </section>
+
+        <section class="container">
+
+            <article>
+                <div class="slider">
+                    <img class="img" src="./img/foto1.jpg" alt="foto1">
+                    <img class="img" src="./img/foto2.jpg" alt="foto2">
+                    <img class="img" src="./img/foto3.jpg" alt="foto3">
+                </div>
+                <div>
+                    <h2>Lago la Encantada</h2>
+                    <div class="container2">
+                        <div class="container3">
+                            <span class="material-icons" id="ubicacion">place</span>
+                            <p>Córdoba</p>
+                            <span class="material-icons" id="family">family_restroom</span>
+                            <p>8 personas</p>
+                        </div>
+                        <div class="container3">
+                            <span class="material-icons" id="dormitorios">hotel</span>
+                            <p>4 camas</p>
+                            <span class="material-icons" id="mascotas">pets</span>
+                            <p>Mascotas</p>
+                        </div>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="container4">
+                        <div>
+                            <p>4.8</p>
+                        </div>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <!-- <button>Reservar</button> -->
+                    </div>
+                </div>
+                <div class="reservar">
+                    <button><a href="reserva.html">Reservar</a></button>
+                    <div>
+                        <span class="material-icons" id="precio">euro_symbol</span>
+                        <p>47€/noche</p>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="slider">
+                    <img class="img" src="./img/foto5.jpg" alt="foto1">
+                    <img class="img" src="./img/foto6.jpg" alt="foto2">
+                    <img class="img" src="./img/foto7.jpg" alt="foto3">
+                </div>
+                <div>
+                    <h2>Casita bonita 2</h2>
+                    <div class="container2">
+                        <div class="container3">
+                            <span class="material-icons" id="ubicacion">place</span>
+                            <p>Málaga</p>
+                            <span class="material-icons" id="family">family_restroom</span>
+                            <p>4 personas</p>
+                        </div>
+                        <div class="container3">
+                            <span class="material-icons" id="dormitorios">hotel</span>
+                            <p>2 camas</p>
+                            <span class="material-icons" id="mascotas">pets</span>
+                            <p>Mascotas</p>
+                        </div>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="container4">
+                        <div>
+                            <p>4</p>
+                        </div>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                    </div>
+                </div>
+                <div class="reservar">
+                    <button><a href="reserva.html">Reservar</a></button>
+                    <div>
+                        <span class="material-icons" id="precio">euro_symbol</span>
+                        <p>40€/noche</p>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="slider">
+                    <img class="img" src="./img/foto7.jpg" alt="foto1">
+                    <img class="img" src="./img/foto8.jpg" alt="foto2">
+                    <img class="img" src="./img/foto9.jpg" alt="foto3">
+                </div>
+                <div>
+                    <h2>Casita bonita 3</h2>
+                    <div class="container2">
+                        <div class="container3">
+                            <span class="material-icons" id="ubicacion">place</span>
+                            <p>Málaga</p>
+                            <span class="material-icons" id="family">family_restroom</span>
+                            <p>4 personas</p>
+                        </div>
+                        <div class="container3">
+                            <span class="material-icons" id="dormitorios">hotel</span>
+                            <p>2 camas</p>
+                            <span class="material-icons" id="mascotas">pets</span>
+                            <p>Mascotas</p>
+                        </div>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="container4">
+                        <div>
+                            <p>4.6</p>
+                        </div>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                    </div>
+                </div>
+                <div class="reservar">
+                    <button><a href="reserva.html">Reservar</a></button>
+                    <div>
+                        <span class="material-icons" id="precio">euro_symbol</span>
+                        <p>50€/noche</p>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="slider">
+                    <img class="img" src="./img/foto5.jpg" alt="foto1">
+                    <img class="img" src="./img/foto6.jpg" alt="foto2">
+                    <img class="img" src="./img/foto7.jpg" alt="foto3">
+                </div>
+                <div>
+                    <h2>Casita bonita 4</h2>
+                    <div class="container2">
+                        <div class="container3">
+                            <span class="material-icons" id="ubicacion">place</span>
+                            <p>Málaga</p>
+                            <span class="material-icons" id="family">family_restroom</span>
+                            <p>4 personas</p>
+                        </div>
+                        <div class="container3">
+                            <span class="material-icons" id="dormitorios">hotel</span>
+                            <p>2 camas</p>
+                            <span class="material-icons" id="mascotas">pets</span>
+                            <p>Mascotas</p>
+                        </div>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="container4">
+                        <div>
+                            <p>4.7</p>
+                        </div>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                    </div>
+                </div>
+                <div class="reservar">
+                    <button><a href="reserva.html">Reservar</a></button>
+                    <div>
+                        <span class="material-icons" id="precio">euro_symbol</span>
+                        <p>47€/noche</p>
+                    </div>
+                </div>
+            </article>
+
+            <article>
+                <div class="slider">
+                    <img class="img" src="./img/foto5.jpg" alt="foto1">
+                    <img class="img" src="./img/foto6.jpg" alt="foto2">
+                    <img class="img" src="./img/foto7.jpg" alt="foto3">
+                </div>
+                <div>
+                    <h2>Casita bonita 5</h2>
+                    <div class="container2">
+                        <div class="container3">
+                            <span class="material-icons" id="ubicacion">place</span>
+                            <p>Málaga</p>
+                            <span class="material-icons" id="family">family_restroom</span>
+                            <p>4 personas</p>
+                        </div>
+                        <div class="container3">
+                            <span class="material-icons" id="dormitorios">hotel</span>
+                            <p>2 camas</p>
+                            <span class="material-icons" id="mascotas">pets</span>
+                            <p>Mascotas</p>
+                        </div>
+                        <div class="linea"></div>
+                    </div>
+                    <div class="container4">
+                        <div>
+                            <p>4.9</p>
+                        </div>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                        <span class="material-icons" id="estrellas">star_rate</span>
+                    </div>
+                </div>
+                <div class="reservar">
+                    <button><a href="reserva.html">Reservar</a></button>
+                    <div>
+                        <span class="material-icons" id="precio">euro_symbol</span>
+                        <p>60€/noche</p>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div>
+            <span class="fa fa-facebook-square" id="facebook"></span>
+        </div>
+        <div>
+            <span class="fa fa-twitter" id="twitter"></span>
+        </div>
+        <div>
+            <span class="fa fa-linkedin" id="linkedin"></span>
+        </div>
+        <div>
+            <span class="fa fa-github"></span>
+        </div>
+        <div>
+            <span class="fa fa-youtube" id="youtube"></span>
+        </div>
+        <h3>@Copyright. Todos los derechos de está página están reservados.</h3>
+
+    </footer>
+
+</body>
+
+</html>
